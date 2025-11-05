@@ -1,0 +1,48 @@
+﻿<Window x:Class="jegyvasarloAlkalmazas.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:jegyvasarloAlkalmazas"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <StackPanel Grid.Row="0" Margin="10">
+                <TextBlock Text="Színházjegy Vásárlás" FontSize="18" FontWeight="Bold" Margin="5"/>
+
+                <TextBlock Text="Név:" Margin="5,10,5,2"/>
+                <TextBox x:Name="txtNev" Margin="5"/>
+
+                <TextBlock Text="Email:" Margin="5,10,5,2"/>
+                <TextBox x:Name="txtEmail" Margin="5"/>
+
+                <TextBlock Text="Előadás:" Margin="5,10,5,2"/>
+                <ComboBox x:Name="cmbEloadas" Margin="5" SelectedIndex="0">
+                    <ComboBoxItem Content="Macskák" Tag="3500"/>
+                    <ComboBoxItem Content="Rómeó és Júlia" Tag="4000"/>
+                    <ComboBoxItem Content="Hamlet" Tag="4500"/>
+                </ComboBox>
+
+                <TextBlock Text="Jegyek száma:" Margin="5,10,5,2"/>
+                <TextBox x:Name="txtJegySzam" Margin="5"/>
+
+                <Label x:Name="lblHiba" Content="" Margin="5" Visibility="Collapsed"/>
+
+                <StackPanel Orientation="Horizontal" Margin="5,10,5,5">
+                    <Button x:Name="btnVasarlas" Content="Vásárlás" Width="100" Margin="5" Click="btnVasarlas_Click"/>
+                    <Button x:Name="btnBetoltes" Content="Betöltés" Width="100" Margin="5" Click="btnBetoltes_Click"/>
+                </StackPanel>
+
+                <TextBlock x:Name="txtOsszesites" Text="" FontWeight="Bold" Margin="5"/>
+            </StackPanel>
+
+            <GroupBox Grid.Row="1" Header="Korábbi vásárlások" Margin="10">
+                <ListBox x:Name="lstVasarlasok" FontFamily="Consolas" FontSize="10"/>
+            </GroupBox>
+        </Grid>
+    </Window>
