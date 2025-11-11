@@ -38,6 +38,7 @@
                     <Button x:Name="btnBetoltes" Content="Betöltés" Width="100" Margin="5" Click="btnBetoltes_Click"/>
                 </StackPanel>
 
+
                 <TextBlock x:Name="txtOsszesites" Text="" FontWeight="Bold" Margin="5"/>
             </StackPanel>
 
